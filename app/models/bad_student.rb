@@ -1,0 +1,4 @@
+class BadStudent < Student
+
+
+end
