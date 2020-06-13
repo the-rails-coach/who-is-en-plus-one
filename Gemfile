@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'haml-rails'
 gem 'faker'
 
 group :development, :test do

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200408200024) do
+ActiveRecord::Schema.define(version: 20200505181332) do
 
   create_table "grades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "report_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "student_id"
+    t.integer  "grade_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,7 +29,6 @@ ActiveRecord::Schema.define(version: 20200408200024) do
     t.integer  "teacher_id"
     t.string   "name"
     t.string   "type"
-    t.integer  "grade_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

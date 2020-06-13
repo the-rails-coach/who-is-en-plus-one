@@ -1,0 +1,22 @@
+
+This teacher #{@teacher.name} has #{@teacher.students.count} students
+
+
+When rendered this way, no N+1 query exists because the name field is on the students table.
+
+%ul
+  -  @teacher.students.each do |student|
+    %li
+      = student.name
+
+
+%hr
+Here are the last report cards for them.
+%ul
+  -  @teacher.students.includes(:report_cards).each do |student|
+    %li
+      = student.name
+      last report card was at
+      = student.report_cards.last.created_at.to_date
+      Grade:
+      = student.report_cards.last.grade.name
